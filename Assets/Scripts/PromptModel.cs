@@ -16,8 +16,7 @@ namespace Finegamedesign.CityOfWords
 				{
 					PromptModel prompt = prompts[row];
 					int length = DataUtil.Length(prompt.answerText);
-					if (empty == prompt.answerTexts[letter] 
-					&& letter < length)
+					if (letter < length && empty == prompt.answerTexts[letter])
 					{
 						if (letter == length - 1)
 						{
