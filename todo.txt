@@ -1,0 +1,8 @@
+SILLY.  Select LL.  Unselect LL.  Expect first L unselected.
+Word solved.  Hint.  Expect no crash.
+2016-08-27 Jennifer Russ expects blank image does not look like a button.
+6x4 grid.
+Multiple grids.
+Word Builder theme.
+extra letters.
+12 letter words: hyperbole, exaggeration

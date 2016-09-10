@@ -14,6 +14,10 @@ Free Immortal font downloaded from:
 
 http://www.1001freefonts.com/immortal.font
 
+A few words from BigIQKids vocabulary word lists.
+
+<http://www.bigiqkids.com>
+
 Game forked from my City of Words.
 
 <https://github.com/ethankennerly/ancient-technology>

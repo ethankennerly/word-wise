@@ -94,7 +94,7 @@ namespace Finegamedesign.CityOfWords
 			}
 		}
 
-		// Hide prompts that have no model.
+		// Hide prompts that have no answer.
 		private void ViewPrompt(PromptModel prompt, PromptView promptView)
 		{
 			TextView.SetText(promptView.promptText, prompt.promptText);
