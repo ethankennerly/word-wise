@@ -1,0 +1,21 @@
+THEME
+Determinism
+
+REFERENCE GAMES
+
+Morphos with hints
+    https://itunes.apple.com/us/app/morphos-transforming-anagram/id924128008?mt=8
+    subwords:
+    http://anagramscramble.com/anagrams-of/raptor
+
+REFERENCE TOYS
+
+Tiles in Banagrams
+
+Uncover pieces of a picture.
+
+REFERENCE STORY
+
+"Linguistic determinism claims that our language determines (at least limits) the things we can think and say and thus know. The Sapir–Whorf hypothesis argues that individuals experience the world based on the grammatical structures they habitually use."
+<https://en.wikipedia.org/wiki/Determinism>
+
