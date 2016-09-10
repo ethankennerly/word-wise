@@ -85,7 +85,8 @@ namespace Finegamedesign.CityOfWords
 
 		private void ViewPrompts()
 		{
-			for (int index = 0; index < DataUtil.Length(model.promptAndAnswers); index++)
+			int index;
+			for (index = 0; index < DataUtil.Length(model.promptAndAnswers); index++)
 			{
 				var prompt = model.promptAndAnswers[index];
 				var promptView = view.promptAndAnswers[index];
@@ -93,15 +94,21 @@ namespace Finegamedesign.CityOfWords
 			}
 		}
 
+		// Hide prompts that have no model.
 		private void ViewPrompt(PromptModel prompt, PromptView promptView)
 		{
 			TextView.SetText(promptView.promptText, prompt.promptText);
-			for (int letter = 0; letter < DataUtil.Length(prompt.answerTexts); letter++)
+			bool isPromptVisible = prompt.answerText != "";
+			SceneNodeView.SetVisible(promptView.gameObject, isPromptVisible);
+			if (isPromptVisible)
 			{
-				string a = prompt.answerTexts[letter];
-				TextView.SetText(promptView.answerTexts[letter], a);
-				bool isVisible = letter < DataUtil.Length(prompt.answerText);
-				SceneNodeView.SetVisible(promptView.answers[letter], isVisible); 
+				for (int letter = 0; letter < DataUtil.Length(prompt.answerTexts); letter++)
+				{
+					string a = prompt.answerTexts[letter];
+					TextView.SetText(promptView.answerTexts[letter], a);
+					bool isVisible = letter < DataUtil.Length(prompt.answerText);
+					SceneNodeView.SetVisible(promptView.answers[letter], isVisible); 
+				}
 			}
 		}
 
