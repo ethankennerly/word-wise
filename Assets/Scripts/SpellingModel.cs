@@ -206,7 +206,8 @@ namespace Finegamedesign.CityOfWords
 			}
 			else
 			{
-				int last = DataUtil.LastIndexOf(selected.answerText, letter);
+				// int last = DataUtil.LastIndexOf(selected.answerText, letter);
+				int last = DataUtil.LastIndexOf(letterButtonsSelected, letterButtonIndex);
 				if (0 <= last)
 				{
 					for (int after = last; after < letterMax; after++)

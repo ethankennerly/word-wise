@@ -275,5 +275,21 @@ namespace Finegamedesign.CityOfWords
 			model.Toggle(model.letterMax - 1);
 			Assert.AreEqual(false, model.isLetterSelects[7]);
 		}
+
+		[Test]
+		public void ToggleDoubleLetterThenFirst()
+		{
+			var model = new SpellingModel();
+			model.table = SpellingController.Load("test_words.csv");
+			model.letterMax = 8;
+			model.Setup();
+			model.contentIndex = 4;
+			model.Populate();
+			model.Toggle(0);
+			model.Toggle(1);
+			Assert.AreEqual("LL", model.selected.answerText);
+			model.Toggle(0);
+			Assert.AreEqual("", model.selected.answerText);
+		}
 	}
 }
