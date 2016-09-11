@@ -7,7 +7,9 @@ namespace Finegamedesign.CityOfWords
 	{
 		public GameObject[] cellStates;
 		public GameObject[] cellButtons;
-		public GameObject titleText;
+		public GameObject completeSession;
+		public GameObject completeSessionButton;
 		public GameObject helpText;
+		public GameObject titleText;
 	}
 }

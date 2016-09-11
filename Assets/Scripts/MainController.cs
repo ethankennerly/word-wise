@@ -18,7 +18,8 @@ namespace Finegamedesign.CityOfWords
 			}
 			spelling.Setup();
 			spelling.Populate();
-			building.model.cellCount = DataUtil.Length(spelling.model.table) - 1;
+			int rows = DataUtil.Length(spelling.model.table) - 1;
+			building.model.cellCount = rows;
 			building.Setup();
 		}
 

@@ -2,6 +2,7 @@ using Finegamedesign.Utils;
 
 namespace Finegamedesign.CityOfWords
 {
+	[System.Serializable]
 	public sealed class BuildingModel
 	{
 		public string[] cellStates;
@@ -10,6 +11,7 @@ namespace Finegamedesign.CityOfWords
 		public int selectedIndex = -1;
 		public bool isSelectNow = false;
 		public bool isCompleteAll = false;
+		public string completeState = "none";
 		public string state = "building";
 
 		public void Setup()
@@ -20,6 +22,7 @@ namespace Finegamedesign.CityOfWords
 				cellStates[index] = index <= 0 ? "available" : "none";
 			}
 			isCompleteAll = false;
+			completeState = "none";
 		}
 
 		public void Select(int index)
@@ -53,6 +56,7 @@ namespace Finegamedesign.CityOfWords
 					isCompleteAll = false;
 				}
 			}
+			completeState = isCompleteAll ? "begin" : "none";
 		}
 
 		public void UnlockCell(int index)
@@ -79,6 +83,11 @@ namespace Finegamedesign.CityOfWords
 			}
 			UnlockCell(selectedIndex - columnCount);
 			UnlockCell(selectedIndex + columnCount);
+		}
+
+		public void CompleteSession()
+		{
+			completeState = "end";
 		}
 	}
 }

@@ -2,6 +2,7 @@ using Finegamedesign.Utils;
 
 namespace Finegamedesign.CityOfWords
 {
+	[System.Serializable]
 	public sealed class BuildingController
 	{
 		public BuildingModel model = new BuildingModel();
@@ -11,11 +12,14 @@ namespace Finegamedesign.CityOfWords
 		public void Setup()
 		{
 			view = (BuildingView) SceneNodeView.FindObjectOfType(typeof(BuildingView));
+			int length = DataUtil.Length(view.cellButtons);
+			model.cellCount = length < model.cellCount ? length : model.cellCount;
 			model.Setup();
-			for (int index = 0; index < DataUtil.Length(view.cellButtons); index++)
+			for (int index = 0; index < length; index++)
 			{
 				buttons.view.Listen(view.cellButtons[index]);
 			}
+			buttons.view.Listen(view.completeSessionButton);
 		}
 
 		public void UpdateButtons()
@@ -35,6 +39,17 @@ namespace Finegamedesign.CityOfWords
 			{
 				AnimationView.SetState(view.cellStates[index], model.cellStates[index]);
 			}
+			UpdateCompleteAll();
+		}
+
+		private void UpdateCompleteAll()
+		{
+			if (view.completeSessionButton == buttons.view.target)
+			{
+				model.CompleteSession();
+			}
+			AnimationView.SetState(view.completeSession,
+				model.completeState);
 		}
 	}
 }
