@@ -10,6 +10,7 @@ namespace Finegamedesign.CityOfWords
 		public GameObject topicText;
 		public GameObject exitButton;
 		public GameObject hintButton;
+		public GameObject hintAnimatorOwner;
 		public GameObject[] letterButtons;
 		public GameObject[] letterButtonTexts;
 		public PromptView[] promptAndAnswers;

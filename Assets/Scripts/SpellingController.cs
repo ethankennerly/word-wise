@@ -68,7 +68,13 @@ namespace Finegamedesign.CityOfWords
 			ViewPrompts();
 			ViewPrompt(model.selected, view.selected);
 			ViewScore();
+			ViewHint();
 			TextView.SetText(view.topicText, model.topicText);
+		}
+
+		private void ViewHint()
+		{
+			AnimationView.SetState(view.hintAnimatorOwner, model.hint.state);
 		}
 
 		private void ViewLetterButtons()

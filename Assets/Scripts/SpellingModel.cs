@@ -28,6 +28,7 @@ namespace Finegamedesign.CityOfWords
 		public int[] letterButtonsSelected;
 		public int answerCount = 0;
 		public string topicText = "";
+		public HintModel hint = new HintModel();
 
 		public void Setup()
 		{
@@ -59,6 +60,7 @@ namespace Finegamedesign.CityOfWords
 			var content = contents[contentIndex];
 			ReferTo(content);
 			ClearSelected();
+			hint.Reset();
 		}
 
 		private void PopulateRow(string[] row)
@@ -203,6 +205,7 @@ namespace Finegamedesign.CityOfWords
 				selected.answerTexts[length] = letter;
 				letterButtonsSelected[length] = letterButtonIndex;
 				AddScore(-1);
+				hint.Attempt();
 			}
 			else
 			{
@@ -238,6 +241,7 @@ namespace Finegamedesign.CityOfWords
 			if (PromptModel.ShowNextLetter(promptAndAnswers))
 			{
 				AddScore(scorePerHint);
+				hint.Show();
 			}
 		}
 
