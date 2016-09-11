@@ -1,11 +1,3 @@
-2016-09-10 Jennifer Russ could play more words than 9.
-	3x3:  one session.  Fill.  Button enters to start next city at higher level.
-	word list of 8, in any order.
-	word list in 3x3 grid.
-		word to pair.
-		scroll bar on list.
-	6x4 grid.
-	Multiple grids.
 Adjust next difficulty by accuracy and speed:
 	difficulty:  synonym by word length, extra letters, rarity, educational grade.
 	accuracy:  ratio of letters selected.

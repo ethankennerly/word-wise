@@ -13,7 +13,7 @@ namespace Finegamedesign.CityOfWords
 		{
 			view = (BuildingView) SceneNodeView.FindObjectOfType(typeof(BuildingView));
 			int length = DataUtil.Length(view.cellButtons);
-			model.cellCount = length < model.cellCount ? length : model.cellCount;
+			model.cellCount = length < model.contentCount ? length : model.contentCount;
 			model.Setup();
 			for (int index = 0; index < length; index++)
 			{

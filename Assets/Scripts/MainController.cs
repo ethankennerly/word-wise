@@ -19,7 +19,7 @@ namespace Finegamedesign.CityOfWords
 			spelling.Setup();
 			spelling.Populate();
 			int rows = DataUtil.Length(spelling.model.table) - 1;
-			building.model.cellCount = rows;
+			building.model.contentCount = rows;
 			building.Setup();
 		}
 
@@ -30,7 +30,7 @@ namespace Finegamedesign.CityOfWords
 			if (building.model.isSelectNow)
 			{
 				building.model.isSelectNow = false;
-				spelling.model.contentIndex = building.model.selectedIndex;
+				spelling.model.contentIndex = building.model.GetContentIndex();
 				spelling.Populate();
 			}
 			else if (spelling.model.isExitNow)

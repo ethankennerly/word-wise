@@ -7,7 +7,9 @@ namespace Finegamedesign.CityOfWords
 	{
 		public string[] cellStates;
 		public int cellCount = 0;
+		public int contentCount = 99999999;
 		public int columnCount = 3;
+		public int sessionIndex = 0;
 		public int selectedIndex = -1;
 		public bool isSelectNow = false;
 		public bool isCompleteAll = false;
@@ -16,6 +18,7 @@ namespace Finegamedesign.CityOfWords
 
 		public void Setup()
 		{
+			cellCount = contentCount < cellCount ? contentCount : cellCount;
 			cellStates = new string[cellCount];
 			for (int index = 0; index < cellCount; index++)
 			{
@@ -85,9 +88,21 @@ namespace Finegamedesign.CityOfWords
 			UnlockCell(selectedIndex + columnCount);
 		}
 
+		public int GetContentIndex()
+		{
+			int level = sessionIndex * cellCount + selectedIndex;
+			for (int lower = sessionIndex; contentCount <= level && lower >= 0; lower--)
+			{
+				level = lower * cellCount + selectedIndex;
+			}
+			return level;
+		}
+
 		public void CompleteSession()
 		{
+			Setup();
 			completeState = "end";
+			sessionIndex++;
 		}
 	}
 }

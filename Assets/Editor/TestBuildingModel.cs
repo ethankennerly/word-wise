@@ -97,6 +97,7 @@ namespace Finegamedesign.CityOfWords
 		{
 			var model = new BuildingModel();
 			model.cellCount = 2;
+			model.contentCount = 6;
 			model.columnCount = 2;
 			for (int session = 0; session < 3; session++)
 			{
@@ -104,6 +105,7 @@ namespace Finegamedesign.CityOfWords
 			    Assert.AreEqual(false, model.isCompleteAll);
 			    Assert.AreEqual("none", model.completeState);
 			    model.Select(0);
+			    Assert.AreEqual(session * model.cellCount, model.GetContentIndex());
 			    model.Complete();
 			    Assert.AreEqual(false, model.isCompleteAll);
 			    Assert.AreEqual("none", model.completeState);
@@ -112,6 +114,7 @@ namespace Finegamedesign.CityOfWords
 			    Assert.AreEqual(false, model.isCompleteAll);
 			    Assert.AreEqual("none", model.completeState);
 			    model.Select(1);
+			    Assert.AreEqual(session * model.cellCount + 1, model.GetContentIndex());
 			    model.Complete();
 			    Assert.AreEqual(true, model.isCompleteAll);
 			    Assert.AreEqual("begin", model.completeState);
