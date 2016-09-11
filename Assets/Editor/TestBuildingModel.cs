@@ -91,5 +91,27 @@ namespace Finegamedesign.CityOfWords
 			Assert.AreEqual("available", model.cellStates[4]);
 			Assert.AreEqual("none", model.cellStates[2]);
 		}
+
+		[Test]
+		public void CompleteIsCompleteAll()
+		{
+			var model = new BuildingModel();
+			model.cellCount = 2;
+			model.columnCount = 2;
+			for (int session = 0; session < 3; session++)
+			{
+			    model.Setup();
+			    Assert.AreEqual(false, model.isCompleteAll);
+			    model.Select(0);
+			    model.Complete();
+			    Assert.AreEqual(false, model.isCompleteAll);
+			    model.Select(0);
+			    model.Complete();
+			    Assert.AreEqual(false, model.isCompleteAll);
+			    model.Select(1);
+			    model.Complete();
+			    Assert.AreEqual(true, model.isCompleteAll);
+			}
+		}
 	}
 }

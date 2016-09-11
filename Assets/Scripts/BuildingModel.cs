@@ -9,6 +9,7 @@ namespace Finegamedesign.CityOfWords
 		public int columnCount = 3;
 		public int selectedIndex = -1;
 		public bool isSelectNow = false;
+		public bool isCompleteAll = false;
 		public string state = "building";
 
 		public void Setup()
@@ -18,6 +19,7 @@ namespace Finegamedesign.CityOfWords
 			{
 				cellStates[index] = index <= 0 ? "available" : "none";
 			}
+			isCompleteAll = false;
 		}
 
 		public void Select(int index)
@@ -43,6 +45,14 @@ namespace Finegamedesign.CityOfWords
 		{
 			cellStates[selectedIndex] = "complete";
 			UnlockAdjacent();
+			isCompleteAll = true;
+			for (int index = 0; index < cellCount; index++)
+			{
+				if (cellStates[index] != "complete")
+				{
+					isCompleteAll = false;
+				}
+			}
 		}
 
 		public void UnlockCell(int index)

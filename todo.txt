@@ -1,10 +1,6 @@
-2016-09-11 Neighbor Kristine completes solemn.
-	Lower grade words.
-2016-09-11 Neighbor Kristine notices hint button.
-	Hint animates in after exhausting letter budget.
-	Then again after 3 letter selections.
 2016-09-10 Jennifer Russ could play more words than 9.
-	3x3:  one session.  start next session.
+	3x3:  one session.  Fill.  Button enters to start next city at higher level.
+	word list of 8, in any order.
 	word list in 3x3 grid.
 		word to pair.
 		scroll bar on list.
@@ -14,7 +10,17 @@ Adjust next difficulty by accuracy and speed:
 	difficulty:  synonym by word length, extra letters, rarity, educational grade.
 	accuracy:  ratio of letters selected.
 	speed:  synonyms spelled per minute.
+	50 words to adjust between.
+	Do not repeat words in session.
 Positive score for each word succeeded.
+table, tap heading to sort by word, speed, accuracy, difficulty, points
 Extra letters.
 Word Builder theme.
 12 letter words: hyperbole, exaggeration
+Experiment with animals with some of those adjectives.
+	animal has attributes:  speed, accuracy, level.
+Experiment to play with solved words:
+	toy has those adjectives.
+	letters animate the adjective as if people.
+	word party
+	word lover
