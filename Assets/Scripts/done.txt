@@ -1,0 +1,1 @@
+2016-08-27 Jennifer Russ expects blank image does not look like a button.

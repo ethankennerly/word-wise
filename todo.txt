@@ -1,7 +1,10 @@
 2016-09-10 Jennifer Russ could play more words than 9.
+	word list in 3x3 grid.
+		word to pair.
+		scroll bar on list.
 	6x4 grid.
 	Multiple grids.
-2016-08-27 Jennifer Russ expects blank image does not look like a button.
+Positive score for each word succeeded.
 Extra letters.
 Word Builder theme.
 12 letter words: hyperbole, exaggeration
