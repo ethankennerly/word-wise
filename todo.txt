@@ -16,3 +16,5 @@ Experiment to play with solved words:
 	letters animate the adjective as if people.
 	word party
 	word lover
+Particles.  
+	Workaround that canvas in screen space overlay blocks particles.

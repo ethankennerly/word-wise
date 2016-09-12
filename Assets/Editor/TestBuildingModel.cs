@@ -101,26 +101,27 @@ namespace Finegamedesign.CityOfWords
 			model.columnCount = 2;
 			for (int session = 0; session < 3; session++)
 			{
-			    model.Setup();
-			    Assert.AreEqual(false, model.isCompleteAll);
-			    Assert.AreEqual("none", model.completeState);
-			    model.Select(0);
-			    Assert.AreEqual(session * model.cellCount, model.GetContentIndex());
-			    model.Complete();
-			    Assert.AreEqual(false, model.isCompleteAll);
-			    Assert.AreEqual("none", model.completeState);
-			    model.Select(0);
-			    model.Complete();
-			    Assert.AreEqual(false, model.isCompleteAll);
-			    Assert.AreEqual("none", model.completeState);
-			    model.Select(1);
-			    Assert.AreEqual(session * model.cellCount + 1, model.GetContentIndex());
-			    model.Complete();
-			    Assert.AreEqual(true, model.isCompleteAll);
-			    Assert.AreEqual("begin", model.completeState);
-			    model.CompleteSession();
-			    Assert.AreEqual("end", model.completeState);
-			    Assert.AreEqual(true, model.isCompleteAll);
+				string message = "session " + session.ToString();
+				model.Setup();
+				Assert.AreEqual(false, model.isCompleteAll);
+				Assert.AreEqual("none", model.completeState);
+				model.Select(0);
+				Assert.AreEqual(session * model.cellCount, model.GetContentIndex());
+				model.Complete();
+				Assert.AreEqual(false, model.isCompleteAll);
+				Assert.AreEqual("none", model.completeState);
+				model.Select(0);
+				model.Complete();
+				Assert.AreEqual(false, model.isCompleteAll);
+				Assert.AreEqual("none", model.completeState);
+				model.Select(1);
+				Assert.AreEqual(session * model.cellCount + 1, model.GetContentIndex());
+				model.Complete();
+				Assert.AreEqual(true, model.isCompleteAll);
+				Assert.AreEqual(session < 2 ? "begin" : "all", model.completeState,
+					message);
+				model.CompleteSession();
+				Assert.AreEqual("end", model.completeState);
 			}
 		}
 	}

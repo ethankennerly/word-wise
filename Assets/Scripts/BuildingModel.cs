@@ -12,6 +12,7 @@ namespace Finegamedesign.CityOfWords
 		public int sessionIndex = 0;
 		public int selectedIndex = -1;
 		public bool isSelectNow = false;
+		public bool isFinalSession = false;
 		public bool isCompleteAll = false;
 		public string completeState = "none";
 		public string state = "building";
@@ -51,6 +52,7 @@ namespace Finegamedesign.CityOfWords
 		{
 			cellStates[selectedIndex] = "complete";
 			UnlockAdjacent();
+			isFinalSession = !((sessionIndex + 1) * cellCount < contentCount);
 			isCompleteAll = true;
 			for (int index = 0; index < cellCount; index++)
 			{
@@ -59,7 +61,9 @@ namespace Finegamedesign.CityOfWords
 					isCompleteAll = false;
 				}
 			}
-			completeState = isCompleteAll ? "begin" : "none";
+			completeState = isCompleteAll 
+				?  (isFinalSession ? "all" : "begin") 
+				: "none";
 		}
 
 		public void UnlockCell(int index)
