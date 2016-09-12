@@ -48,11 +48,15 @@ namespace Finegamedesign.CityOfWords
 			UnlockAdjacent();
 		}
 
+		// If not enough words to fill next city, mark this city as final.
+		// Test case:  2016-09-11 About 20 words in data.
+		// Complete 2 cities of 9 each.  Jennifer Russ expects completed all.
+		// Got 3rd city.  First word is unique.  Most others repeat.
 		public void Complete()
 		{
 			cellStates[selectedIndex] = "complete";
 			UnlockAdjacent();
-			isFinalSession = !((sessionIndex + 1) * cellCount < contentCount);
+			isFinalSession = !((sessionIndex + 2) * cellCount <= contentCount);
 			isCompleteAll = true;
 			for (int index = 0; index < cellCount; index++)
 			{

@@ -97,7 +97,7 @@ namespace Finegamedesign.CityOfWords
 		{
 			var model = new BuildingModel();
 			model.cellCount = 2;
-			model.contentCount = 6;
+			model.contentCount = 7;
 			model.columnCount = 2;
 			for (int session = 0; session < 3; session++)
 			{
